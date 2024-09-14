@@ -16,9 +16,9 @@ spring:
             ddl-auto: create
         show-sql: false
     datasource:
-        url: jdbc:mariadb://mariadb-1726227428:3306/booking
-        username: ms-saga
-        password: ms-saga-pass
+        url: ${DATA_SOURCE_URL}
+        username: ${DATA_SOURCE_URL_USER}
+        password: ${DATA_SOURCE_URL_USER_PASS}
         driver-class-name: org.mariadb.jdbc.Driver
     h2:
         console:
@@ -42,7 +42,7 @@ management:
       probability: 1.0
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: ${ZIPKIN_URL}
   endpoints:
     web:
       exposure:
